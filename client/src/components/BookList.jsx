@@ -7,6 +7,7 @@ function BookList() {
   useEffect(() => {
     axios.get("http://localhost:3300/api/books").then((res) => {
       setBooks(res.data);
+      console.log(books[0].imagePath);
     });
   }, []);
 
@@ -36,7 +37,7 @@ function BookList() {
                 <img
                   src={book.imagePath}
                   alt={book.name}
-                  style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                  style={{ objectFit: "cover", width: "200px", height: "100%" }}
                 />
               </td>
               <td>{`${book.writer.firstname} ${book.writer.lastname}`}</td>

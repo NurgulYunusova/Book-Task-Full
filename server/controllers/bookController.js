@@ -68,6 +68,15 @@ const bookController = {
   },
   deleteById: (req, res) => {
     let id = req.params.id;
+    // let photoName = req.params.name;
+
+    // fs.unlink("/bookImages/" + photoName, function (err) {
+    //   if (!err) {
+    //     res.send("DELETED!!");
+    //   } else {
+    //     res.status(500).json(err);
+    //   }
+    // });
 
     Book.findByIdAndDelete(id)
       .then((data) => {
